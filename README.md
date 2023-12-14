@@ -1,43 +1,51 @@
-# Get started with Compose Multiplatform
+[![Official project](https://jb.gg/badges/official-plastic.svg)](https://github.com/JetBrains#jetbrains-on-github)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-## Incremental projects to accompany tutorial
+# Get started with [Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform)
 
-This repository contains four seperate projects, to accompany the [Get started with Compose Multiplatform tutorial](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-multiplatform-getting-started.html). You can open and execute these, as an alternative to following the tutorial manually. The projects are as follows:
+This repository contains four separate projects. Each project accompanies corresponding sections of the [Get started with Compose Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-multiplatform-getting-started.html) tutorial.
+You can open and run each project or follow the tutorial manually and create your own.
 
 ### ComposeDemoStage1
 
-In this stage we have:
+This project reflects steps 2, 3, and 4 of the tutorial.
 
-1. Created a project via the [Kotlin Multiplatform Wizard](https://kmp.jetbrains.com/)
-2. Included the [kotlinx-datetime](https://github.com/Kotlin/kotlinx-datetime) library
-3. Added a sample function called `todaysDate`
-4. Invoked this function from the `App` composable
+In this project, we:
 
-This completes the tutorial as far as the [Modify the project](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-multiplatform-modify-project.html) section.
+1. Create a project using the [Kotlin Multiplatform wizard](https://kmp.jetbrains.com/).
+2. Add a dependency on the [kotlinx-datetime](https://github.com/Kotlin/kotlinx-datetime) library.
+3. Add the `todaysDate()` function that returns current date.
+4. Invoke this function from the `App` composable.
+
+That's how your application should look at the end of the [Modify the project](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-multiplatform-modify-project.html) step.
 
 ### ComposeDemoStage2
 
-In this stage we have:
+This project reflects the changes made at the beginning of the fifth step of the tutorial.
 
-1. Rewritten the `App` composable from scratch
-2. Removed any unecessary imports and code
-2. Altered the `main` function, so the desktop window is correct
-3. Included support for user input, and styled the composable
-4. Added and invoked a `currentTimeAt` function
+In this project, we:
 
-This completes the tutorial as far as the [Improve the style](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-multiplatform-new-project.html#improve-the-style) section.
+1. Rewrite the `App` composable from scratch, removing unnecessary imports and code.
+2. Alter the `main()` function to improve the window rendering on desktop.
+3. Add support for user input and style the composable.
+4. Create and invoke the `currentTimeAt()` function that returns current time at a particular location.
+5. Improve the appearance of composables.
+
+That's how your application should look at the end of the [Improve the style](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-multiplatform-new-project.html#improve-the-style) section on the fifth step of the tutorial.
 
 ### ComposeDemoStage3
 
-In this stage we have refactored the design of the application. Users can now select items from a dropdown menu, instead of having to type into a text field.
+This project reflects the changes made in the [Refactor the design](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-multiplatform-new-project.html#refactor-the-design) section on the fifth step of the tutorial.
 
-This completes the tutorial as far as the [Refactor the design](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-multiplatform-new-project.html#refactor-the-design) section.
+In this project, we change the application design. Users can now select items from a dropdown menu instead of manually using the text field.
 
 ### ComposeDemoStage4
 
-In this stage we have:
+This project reflects the changes made in the [Introduce images](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-multiplatform-new-project.html#introduce-images) section on the fifth step of the tutorial.
 
-1. Included images in the resources folder of the application
-2. Enhanced the dropdown menu, so each item is displayed with an image
+In this project, we:
 
-This completes the tutorial.
+1. Include images in the `resources` folder of the application.
+2. Enhance the dropdown menu to display each item with an image.
+
+This is the final stage of the tutorial. That's how your application should look at the end of the [Create your own application](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-multiplatform-new-project.html) step.
