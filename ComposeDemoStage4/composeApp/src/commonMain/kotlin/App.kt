@@ -20,14 +20,17 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import kotlinproject.composeapp.generated.resources.Res
 import kotlinx.datetime.Clock
 import kotlinx.datetime.LocalTime
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime
+import org.jetbrains.compose.resources.DrawableResource
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
 
-data class Country(val name: String, val zone: TimeZone, val image: String)
+@OptIn(ExperimentalResourceApi::class)
+data class Country(val name: String, val zone: TimeZone, val image: DrawableResource)
 
 fun currentTimeAt(location: String, zone: TimeZone): String {
     fun LocalTime.formatted() = "$hour:$minute:$second"
@@ -38,17 +41,18 @@ fun currentTimeAt(location: String, zone: TimeZone): String {
     return "The time in $location is ${localTime.formatted()}"
 }
 
-fun countries() = listOf(
-    Country("Japan", TimeZone.of("Asia/Tokyo"), "jp.png"),
-    Country("France", TimeZone.of("Europe/Paris"), "fr.png"),
-    Country("Mexico", TimeZone.of("America/Mexico_City"), "mx.png"),
-    Country("Indonesia", TimeZone.of("Asia/Jakarta"), "id.png"),
-    Country("Egypt", TimeZone.of("Africa/Cairo"), "eg.png")
+@OptIn(ExperimentalResourceApi::class)
+val defaultCountries = listOf(
+    Country("Japan", TimeZone.of("Asia/Tokyo"), Res.drawable.jp),
+    Country("France", TimeZone.of("Europe/Paris"), Res.drawable.fr),
+    Country("Mexico", TimeZone.of("America/Mexico_City"), Res.drawable.mx),
+    Country("Indonesia", TimeZone.of("Asia/Jakarta"), Res.drawable.id),
+    Country("Egypt", TimeZone.of("Africa/Cairo"), Res.drawable.eg)
 )
 
 @OptIn(ExperimentalResourceApi::class)
 @Composable
-fun App(countries: List<Country> = countries()) {
+fun App(countries: List<Country> = defaultCountries) {
     MaterialTheme {
         var showCountries by remember { mutableStateOf(false) }
         var timeAtLocation by remember { mutableStateOf("No location selected") }

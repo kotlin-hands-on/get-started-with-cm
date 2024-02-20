@@ -52,7 +52,7 @@ fun App() {
             }
             AnimatedVisibility(showImage) {
                 Image(
-                    painterResource("compose-multiplatform.xml"),
+                    painterResource(Res.drawable.compose_multiplatform),
                     null
                 )
             }
