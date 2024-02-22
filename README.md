@@ -45,7 +45,7 @@ This project reflects the changes made in the [Introduce images](https://www.jet
 
 In this project, we:
 
-1. Include images in the `resources` folder of the application.
+1. Include images in the `composeResources` folder of the application.
 2. Enhance the dropdown menu to display each item with an image.
 
 This is the final stage of the tutorial. That's how your application should look at the end of the [Create your own application](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-multiplatform-new-project.html) step.
