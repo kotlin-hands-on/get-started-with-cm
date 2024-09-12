@@ -1,4 +1,4 @@
-rootProject.name = "kotlinproject"
+rootProject.name = "ComposeDemo"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {
