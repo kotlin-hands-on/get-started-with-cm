@@ -8,7 +8,7 @@ You can open and run each project or follow the tutorial manually and create you
 
 ### ComposeDemoStage1
 
-This project reflects steps 2, 3, and 4 of the tutorial.
+This project reflects steps 1, 2, and 3 of the tutorial.
 
 In this project, we:
 
@@ -21,7 +21,7 @@ That's how your application should look at the end of the [Modify the project](h
 
 ### ComposeDemoStage2
 
-This project reflects the changes made at the beginning of the fifth step of the tutorial.
+This project reflects the changes made at the beginning of the fourth step of the tutorial.
 
 In this project, we:
 
@@ -31,17 +31,17 @@ In this project, we:
 4. Create and invoke the `currentTimeAt()` function that returns current time at a particular location.
 5. Improve the appearance of composables.
 
-That's how your application should look at the end of the [Improve the style](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-multiplatform-new-project.html#improve-the-style) section on the fifth step of the tutorial.
+That's how your application should look at the end of the [Improve the style](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-multiplatform-new-project.html#improve-the-style) section on the fourth step of the tutorial.
 
 ### ComposeDemoStage3
 
-This project reflects the changes made in the [Refactor the design](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-multiplatform-new-project.html#refactor-the-design) section on the fifth step of the tutorial.
+This project reflects the changes made in the [Refactor the design](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-multiplatform-new-project.html#refactor-the-design) section on the fourth step of the tutorial.
 
 In this project, we change the application design. Users can now select items from a dropdown menu instead of manually using the text field.
 
 ### ComposeDemoStage4
 
-This project reflects the changes made in the [Introduce images](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-multiplatform-new-project.html#introduce-images) section on the fifth step of the tutorial.
+This project reflects the changes made in the [Introduce images](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-multiplatform-new-project.html#introduce-images) section on the fourth step of the tutorial.
 
 In this project, we:
 
