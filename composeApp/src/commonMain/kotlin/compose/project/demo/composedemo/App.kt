@@ -30,7 +30,7 @@ import composedemo.composeapp.generated.resources.fr
 import composedemo.composeapp.generated.resources.id
 import composedemo.composeapp.generated.resources.jp
 import composedemo.composeapp.generated.resources.mx
-import kotlinx.datetime.Clock
+import kotlin.time.Clock
 import kotlinx.datetime.LocalTime
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime
