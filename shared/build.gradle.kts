@@ -1,4 +1,3 @@
-import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
@@ -40,13 +39,11 @@ kotlin {
 
     js {
         browser()
-        binaries.executable()
     }
 
     @OptIn(ExperimentalWasmDsl::class)
     wasmJs {
         browser()
-        binaries.executable()
     }
 
     sourceSets {
@@ -70,28 +67,9 @@ kotlin {
         commonTest.dependencies {
             implementation(libs.kotlin.test)
         }
-        jvmMain.dependencies {
-            implementation(compose.desktop.currentOs)
-            implementation(libs.kotlinx.coroutinesSwing)
-        }
-        webMain.dependencies {
-            implementation(npm("@js-joda/timezone", "2.22.0"))
-        }
     }
 }
 
 dependencies {
     androidRuntimeClasspath(libs.compose.uiTooling)
-}
-
-compose.desktop {
-    application {
-        mainClass = "compose.project.demo.composedemo.MainKt"
-
-        nativeDistributions {
-            targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-            packageName = "compose.project.demo.composedemo"
-            packageVersion = "1.0.0"
-        }
-    }
 }
