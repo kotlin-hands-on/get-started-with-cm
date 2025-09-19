@@ -14,11 +14,11 @@ kotlin {
     }
 
     dependencies {
-        implementation(projects.composeApp)
+        implementation(projects.shared)
 
         implementation(libs.androidx.activity.compose)
 
-        implementation(compose.components.uiToolingPreview)
+        debugImplementation(compose.components.uiToolingPreview)
     }
 }
 
