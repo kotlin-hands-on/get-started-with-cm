@@ -18,7 +18,7 @@ kotlin {
 
         implementation(libs.androidx.activity.compose)
 
-        debugImplementation(compose.components.uiToolingPreview)
+        debugImplementation(libs.compose.ui.tooling.preview)
     }
 }
 
@@ -47,4 +47,8 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+}
+
+dependencies {
+    debugImplementation(libs.compose.ui.tooling)
 }

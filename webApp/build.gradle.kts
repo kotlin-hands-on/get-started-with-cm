@@ -23,7 +23,7 @@ kotlin {
         commonMain.dependencies {
             implementation(projects.shared)
 
-            implementation(compose.ui)
+            implementation(libs.compose.ui)
             implementation(npm("@js-joda/timezone", "2.22.0"))
         }
     }
