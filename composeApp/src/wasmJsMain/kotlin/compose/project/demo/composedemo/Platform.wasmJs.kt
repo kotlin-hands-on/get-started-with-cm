@@ -1,7 +1,0 @@
-package compose.project.demo.composedemo
-
-class WasmPlatform : Platform {
-    override val name: String = "Web with Kotlin/Wasm"
-}
-
-actual fun getPlatform(): Platform = WasmPlatform()

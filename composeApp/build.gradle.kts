@@ -14,14 +14,12 @@ plugins {
 
 kotlin {
     androidTarget {
-        @OptIn(ExperimentalKotlinGradlePluginApi::class)
         compilerOptions {
             jvmTarget.set(JvmTarget.JVM_11)
         }
     }
 
     listOf(
-        iosX64(),
         iosArm64(),
         iosSimulatorArm64()
     ).forEach { iosTarget ->
@@ -31,25 +29,16 @@ kotlin {
         }
     }
 
-    jvm("desktop")
+    jvm()
+
+    js {
+        browser()
+        binaries.executable()
+    }
 
     @OptIn(ExperimentalWasmDsl::class)
     wasmJs {
-        outputModuleName.set("composeApp")
-        browser {
-            val rootDirPath = project.rootDir.path
-            val projectDirPath = project.projectDir.path
-            commonWebpackConfig {
-                outputFileName = "composeApp.js"
-                devServer = (devServer ?: KotlinWebpackConfig.DevServer()).apply {
-                    static = (static ?: mutableListOf()).apply {
-                        // Serve sources to debug inside browser
-                        add(rootDirPath)
-                        add(projectDirPath)
-                    }
-                }
-            }
-        }
+        browser()
         binaries.executable()
     }
 
@@ -59,8 +48,6 @@ kotlin {
                 optIn("kotlin.time.ExperimentalTime")
             }
         }
-
-        val desktopMain by getting
 
         androidMain.dependencies {
             implementation(compose.preview)
@@ -73,18 +60,18 @@ kotlin {
             implementation(compose.ui)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
-            implementation(libs.androidx.lifecycle.viewmodel)
+            implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
             implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.7.1")
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
         }
-        desktopMain.dependencies {
+        jvmMain.dependencies {
             implementation(compose.desktop.currentOs)
             implementation(libs.kotlinx.coroutinesSwing)
         }
-        wasmJsMain.dependencies {
+        webMain.dependencies {
             implementation(npm("@js-joda/timezone", "2.22.0"))
         }
     }
