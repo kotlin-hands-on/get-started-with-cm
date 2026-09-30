@@ -72,6 +72,8 @@ fun App(countries: List<Country> = defaultCountries()) {
             Text(
                 timeAtLocation,
                 style = TextStyle(fontSize = 20.sp),
+                textAlign = TextAlign.Center,
+                modifier = Modifier.fillMaxWidth().align(Alignment.CenterHorizontally),
             )
             Row(modifier = Modifier.padding(start = 20.dp, top = 10.dp)) {
                 DropdownMenu(
