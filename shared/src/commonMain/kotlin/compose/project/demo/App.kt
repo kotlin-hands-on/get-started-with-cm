@@ -23,6 +23,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import kotlinx.datetime.LocalTime
 import kotlinx.datetime.TimeZone
+import kotlinx.datetime.format
+import kotlinx.datetime.format.char
 import kotlinx.datetime.toLocalDateTime
 import kotlin.time.Clock
 import composedemo.shared.generated.resources.Res
@@ -38,12 +40,18 @@ import org.jetbrains.compose.resources.painterResource
 data class Country(val name: String, val zone: TimeZone, val image: DrawableResource)
 
 fun currentTimeAt(location: String, zone: TimeZone): String {
-    fun LocalTime.formatted() = "$hour:$minute:$second"
+    val timeFormat = LocalTime.Format {
+        hour()
+        char(':')
+        minute()
+        char(':')
+        second()
+    }
 
     val time = Clock.System.now()
     val localTime = time.toLocalDateTime(zone).time
 
-    return "The time in $location is ${localTime.formatted()}"
+    return "The time in $location is ${localTime.format(timeFormat)}"
 }
 
 // Initializes the list with imported Compose Multiplatform resources
