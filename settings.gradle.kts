@@ -1,5 +1,4 @@
-rootProject.name = "composedemo"
-enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+rootProject.name = "ComposeDemo"
 
 pluginManagement {
     repositories {
@@ -32,7 +31,7 @@ plugins {
     id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
 }
 
-include(":shared")
-include(":desktopApp")
 include(":androidApp")
+include(":desktopApp")
+include(":shared")
 include(":webApp")

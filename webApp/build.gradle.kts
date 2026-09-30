@@ -6,7 +6,6 @@ plugins {
     alias(libs.plugins.composeCompiler)
 }
 
-
 kotlin {
     js {
         browser()
@@ -21,10 +20,12 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            implementation(projects.shared)
+            implementation(project(":shared"))
 
             implementation(libs.compose.ui)
-            implementation(npm("@js-joda/timezone", "2.22.0"))
+        }
+        webMain.dependencies {
+            implementation(npm("@js-joda/timezone", "2.25.2"))
         }
     }
 }
