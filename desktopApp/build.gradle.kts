@@ -6,22 +6,22 @@ plugins {
     alias(libs.plugins.composeCompiler)
 }
 
-kotlin {
-    dependencies {
-        implementation(projects.shared)
+dependencies {
+    implementation(project(":shared"))
 
-        implementation(compose.desktop.currentOs)
-        implementation(libs.kotlinx.coroutinesSwing)
-    }
+    implementation(compose.desktop.currentOs)
+    implementation(libs.kotlinx.coroutinesSwing)
+
+    implementation(libs.compose.uiToolingPreview)
 }
 
 compose.desktop {
     application {
-        mainClass = "compose.project.demo.composedemo.MainKt"
+        mainClass = "compose.project.demo.MainKt"
 
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-            packageName = "compose.project.demo.composedemo"
+            packageName = "compose.project.demo"
             packageVersion = "1.0.0"
         }
     }

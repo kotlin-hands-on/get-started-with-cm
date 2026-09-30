@@ -1,4 +1,4 @@
-package compose.project.demo.composedemo
+package compose.project.demo
 
 import androidx.compose.ui.window.ComposeUIViewController
 
